@@ -398,9 +398,18 @@ function switchTab(tab) {
   if (tab === "visualizer") requestAnimationFrame(resizeCanvas);
 }
 
+function getBasePath() {
+  const parts = location.pathname.split("/").filter(Boolean);
+  if (parts.length > 0 && parts[0] !== "index.html") {
+    return `/${parts[0]}/`;
+  }
+  return "./";
+}
+
 function registerServiceWorker() {
   if ("serviceWorker" in navigator) {
-    navigator.serviceWorker.register("sw.js").catch(() => {});
+    const base = getBasePath();
+    navigator.serviceWorker.register(`${base}sw.js`, { scope: base }).catch(() => {});
   }
 }
 

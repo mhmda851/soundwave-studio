@@ -8,12 +8,10 @@ echo   SoundWave — رفع المشروع إلى GitHub Pages
 echo ====================================================
 echo.
 
-set /p GH_USER=اكتب اسم مستخدم GitHub (مثال: ahmed123): 
-if "%GH_USER%"=="" (
-    echo يجب إدخال اسم المستخدم.
-    pause
-    exit /b 1
-)
+set GH_USER=mhmda851
+echo اسم المستخدم: %GH_USER%
+echo (ملاحظة: اسم المستخدم ليس البريد الإلكتروني)
+echo.
 
 set REPO=soundwave-studio
 set GIT=git -c safe.directory=F:/soundwaveprgram
