@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no" />
+  <meta name="theme-color" content="#0a0a0a" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="SoundWave" />
+  <meta name="description" content="مسجل صوت + محلل ذبذبات تفاعلي للموبايل" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="icon" href="icons/icon-192.png" />
+  <link rel="apple-touch-icon" href="icons/icon-192.png" />
+  <link rel="stylesheet" href="style.css" />
+  <title>SoundWave Studio</title>
+</head>
+<body>
+  <div id="app">
+    <header class="top-bar">
+      <h1>SoundWave Studio</h1>
+      <p id="status-text">اضغط «ابدأ» لتفعيل الميكروفون</p>
+    </header>
+
+    <nav class="tabs" role="tablist">
+      <button class="tab active" data-tab="visualizer" role="tab" aria-selected="true">المحلل</button>
+      <button class="tab" data-tab="recorder" role="tab" aria-selected="false">المسجّل</button>
+    </nav>
+
+    <main>
+      <section id="panel-visualizer" class="panel active" role="tabpanel">
+        <div class="canvas-wrap">
+          <canvas id="viz-canvas"></canvas>
+          <div class="level-meter" aria-hidden="true">
+            <div class="meter-label">LEVEL</div>
+            <div class="meter-bar"><div id="meter-fill"></div><div id="meter-peak"></div></div>
+            <div id="meter-value" class="meter-value">0</div>
+          </div>
+        </div>
+        <div class="viz-controls">
+          <button id="btn-view-mode" class="btn secondary">موجات</button>
+          <button id="btn-gain-down" class="btn secondary">−</button>
+          <span id="gain-label" class="gain-label">حساسية 1.0</span>
+          <button id="btn-gain-up" class="btn secondary">+</button>
+        </div>
+      </section>
+
+      <section id="panel-recorder" class="panel" role="tabpanel" hidden>
+        <div class="recorder-card">
+          <div id="rec-indicator" class="rec-indicator hidden">
+            <span class="rec-dot"></span> REC
+          </div>
+          <div id="rec-timer" class="rec-timer">00:00</div>
+          <p id="rec-status" class="rec-status">جاهز للتسجيل</p>
+          <button id="btn-record" class="btn record-btn" disabled>●</button>
+          <p class="rec-hint">يُحفظ الملف على جهازك بعد الإيقاف</p>
+          <a id="download-link" class="download-link hidden" download>تنزيل آخر تسجيل</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="bottom-bar">
+      <button id="btn-start" class="btn primary full">ابدأ الميكروفون</button>
+      <button id="btn-install" class="btn secondary full hidden">تثبيت التطبيق</button>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

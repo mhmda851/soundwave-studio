@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+build/
+dist/
+*.spec.bak
+recordings/
+*.log
+.env
+soundwave-mobile.zip
+debug_screen.png
