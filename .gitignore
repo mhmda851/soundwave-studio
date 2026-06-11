@@ -7,4 +7,10 @@ recordings/
 *.log
 .env
 soundwave-mobile.zip
+SoundWave-Release-*.zip
+release/
+SoundWave-Release-*.zip
+android/
+node_modules/
+package-lock.json
 debug_screen.png

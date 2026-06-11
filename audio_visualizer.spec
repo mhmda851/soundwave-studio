@@ -71,7 +71,7 @@ exe = EXE(
     a.zipfiles,
     a.datas,
     [],
-    name="AudioVisualizer",
+    name="SoundWaveStudio",
     debug=False,
     bootloader_ignore_signals=False,
     strip=False,
